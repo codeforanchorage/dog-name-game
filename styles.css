@@ -1,8 +1,6 @@
 /*
-font-family: 'Life Savers', cursive;
-font-family: 'Love Ya Like A Sister', cursive;
-font-family: 'Abril Fatface', cursive;
-
+    font-family: 'Life Savers', cursive;
+    font-family: 'Abril Fatface', cursive;
 */
 @font-face {
   font-family: "Flaticon";
@@ -29,7 +27,6 @@ html {height: 100%;}
     top: 40%;
     width: 100%;
     text-align: center;
-    /*opacity: 0;*/
     height: 0em;
     overflow:hidden;
     transition: height .5s ease-in, opacity 1s;
