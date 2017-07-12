@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="loading">
     <head>
         <title>Anchorage Dog Name Game</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,16 +32,16 @@
             .final_results #results { display: none }
             .final_results #final_results{ display: block }
         </style>
-
-
     </head>
     <body class="choose_mode">
-        <div id="loading">Loading</div>
+
         <div id="main">
             <div id="title-block">
                 <h3>Anchorage<br>Edition</h3>
                 <h1>Dog Name <span class="undertuck">Game</span></h1>
             </div>
+            <div id="loading"><img src="resources/runningDog.gif"> <br />Loading Dogs</div>
+            <noscript>Sorry, the dog name game requires javascript</noscript>
             <div id="choose_mode">
                 <button class="dog-with-chubby-cheeks" onclick="chooseMode(false)">Easy Mode</button>
                 <button class="angry-bulldog-face"onclick="chooseMode(true)">Hard Mode</button>

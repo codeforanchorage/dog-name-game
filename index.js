@@ -8,19 +8,24 @@ var current_dog_pair = null
 var dogs = []
 var loading = true;
 var htmlElement = document.querySelector("html");
-htmlElement.className += " loading";
+
+var DOG_DATA_URL = 'https://data.muni.org/resource/r849-w2cw.json?$limit=8000'
+/*  Dog data as an array of objects:
+    [{"name": "FIDO", "count": "30"}, {"name": ...]
+    The input script transofrms the 'name' parameter ot lowercase
+    and parses the 'count' parameter to an integrer
+*/
 
 getDogData()
 
 function getDogData(){
     httpRequest = new XMLHttpRequest();
-    console.log("running requests")
     if (!httpRequest) {
-      alert("I'm sorry - I can't get the dog data");
+      alert("I'm sorry - I can't load the dog data");
       return false;
     }
     httpRequest.onreadystatechange = incoming;
-    httpRequest.open('GET', 'https://data.muni.org/resource/r849-w2cw.json?$limit=5000');
+    httpRequest.open('GET', DOG_DATA_URL);
     httpRequest.send();
   }
 
@@ -34,14 +39,12 @@ function getDogData(){
         })
         var htmlElement = document.querySelector("html");
         htmlElement.className = ""
-        console.log("html class",htmlElement.className)
         loading = false
       } else {
-        alert("I'm sorry - I can't get the dog data");
+        alert("I'm sorry - the was an error loading the dog data");
       }
     }
   }
-
 
 
 // Grabs 2 dogs from the (global) dog list
