@@ -5,6 +5,43 @@ var is_hard_mode = false
 var rounds_played = 0
 var correct_rounds = 0
 var current_dog_pair = null
+var dogs = []
+var loading = true;
+var htmlElement = document.querySelector("html");
+htmlElement.className += " loading";
+
+getDogData()
+
+function getDogData(){
+    httpRequest = new XMLHttpRequest();
+    console.log("running requests")
+    if (!httpRequest) {
+      alert("I'm sorry - I can't get the dog data");
+      return false;
+    }
+    httpRequest.onreadystatechange = incoming;
+    httpRequest.open('GET', 'https://data.muni.org/resource/r849-w2cw.json?$limit=5000');
+    httpRequest.send();
+  }
+
+  function incoming() {
+    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+      if (httpRequest.status === 200) {
+        dogs = JSON.parse(httpRequest.responseText);
+        dogs.forEach(function(dog){
+            dog.count = parseInt(dog.count)
+            dog.name = dog.name.toLowerCase()
+        })
+        var htmlElement = document.querySelector("html");
+        htmlElement.className = ""
+        console.log("html class",htmlElement.className)
+        loading = false
+      } else {
+        alert("I'm sorry - I can't get the dog data");
+      }
+    }
+  }
+
 
 
 // Grabs 2 dogs from the (global) dog list

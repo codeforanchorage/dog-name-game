@@ -15,6 +15,27 @@ font-family: 'Abril Fatface', cursive;
   font-style: normal;
 }
 html {height: 100%;}
+.loading #main {
+    opacity: 0.0;
+
+}
+#loading {
+    font-family: Abril Fatface;
+    display:none;
+    font-size: 2em;
+    color:#666;
+    position:absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+}
+.loading #loading {
+    display: block;
+    opacity: 1.0;
+        transition: opacity 1s
+
+}
 body {
     margin: 0;
     height: 100%;
@@ -36,6 +57,8 @@ body {
     border: 8px double #e1e1e1;
     box-sizing: border-box;
     overflow-y: auto;
+    transition: opacity 1s;
+
 }
 #footer {
     text-align: center;
@@ -218,6 +241,9 @@ button:before {
 }
 
 @media screen and (max-height:500px) {
+    #loading body {
+        opacity: .5
+    }
     #round, #results, #play, #choose_mode {
         font-size: 1.3em;
     }
