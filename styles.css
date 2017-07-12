@@ -1,8 +1,6 @@
 /*
-font-family: 'Life Savers', cursive;
-font-family: 'Love Ya Like A Sister', cursive;
-font-family: 'Abril Fatface', cursive;
-
+    font-family: 'Life Savers', cursive;
+    font-family: 'Abril Fatface', cursive;
 */
 @font-face {
   font-family: "Flaticon";
@@ -15,26 +13,31 @@ font-family: 'Abril Fatface', cursive;
   font-style: normal;
 }
 html {height: 100%;}
-.loading #main {
+.loading #choose_mode {
     opacity: 0.0;
-
+}
+#choose_mode{
+    transition: opacity 1s;
 }
 #loading {
-    font-family: Abril Fatface;
-    display:none;
+    font-family: "Life Savers";
+    /* display:none;*/
     font-size: 2em;
     color:#666;
-    position:absolute;
     top: 40%;
     width: 100%;
     text-align: center;
-    opacity: 0;
+    height: 0em;
+    overflow:hidden;
+    transition: height .5s ease-in, opacity 1s;
 }
 .loading #loading {
     display: block;
     opacity: 1.0;
-        transition: opacity 1s
-
+    height: 100%;
+}
+#loading img {
+    margin-top:1em;
 }
 body {
     margin: 0;
@@ -57,7 +60,6 @@ body {
     border: 8px double #e1e1e1;
     box-sizing: border-box;
     overflow-y: auto;
-    transition: opacity 1s;
 
 }
 #footer {
@@ -74,7 +76,6 @@ body {
 }
 
 h1 {
-    /*font-family: 'Life Savers';*/
     margin-top: 0px;
     text-align: center;
     font-size:6em;
@@ -244,8 +245,10 @@ button:before {
     #loading body {
         opacity: .5
     }
+
     #round, #results, #play, #choose_mode {
         font-size: 1.3em;
+
     }
     .play h3, .results h3 {
         display:none;
