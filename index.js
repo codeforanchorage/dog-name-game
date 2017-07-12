@@ -7,7 +7,6 @@ var correct_rounds = 0
 var current_dog_pair = null
 var dogs = []
 var loading = true;
-var htmlElement = document.querySelector("html");
 
 var DOG_DATA_URL = 'https://data.muni.org/resource/r849-w2cw.json?$limit=8000'
 /*  Dog data as an array of objects:
