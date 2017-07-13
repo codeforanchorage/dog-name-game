@@ -11,7 +11,7 @@ var loading = true;
 var DOG_DATA_URL = 'https://data.muni.org/resource/r849-w2cw.json?$limit=8000'
 /*  Dog data as an array of objects:
     [{"name": "FIDO", "count": "30"}, {"name": ...]
-    The input script transofrms the 'name' parameter ot lowercase
+    The input script transforms the 'name' parameter to lowercase
     and parses the 'count' parameter to an integrer
 */
 
