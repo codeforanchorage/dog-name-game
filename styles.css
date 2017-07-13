@@ -71,7 +71,7 @@ body {
     z-index: 10;
     height: 3em;
     margin-top: -2.5em;
-    font-size: 3vmin;
+    font-size: 2vmin;
 }
 #title-block {
     border-top: 1px solid #d5d5d5;
@@ -246,9 +246,6 @@ button:before {
 }
 
 @media screen and (max-height:500px) {
-    #loading body {
-        opacity: .5
-    }
 
     #round, #results, #play, #choose_mode {
         font-size: 1.3em;
